@@ -71,82 +71,82 @@ The Supplier User manages the drug orders raised by the salesperson and can deli
 
 ## Screenshots🔥
 `Home page`
-![](images/1.png)
+![](Images/1.png)
 
 `Guest view Drugs Inventory page`
-![](images/2.png)
+![](Images/2.png)
 
 `Guest view Physician Page`
-![](images/3.png)
+![](Images/3.png)
 
 `Login Page`
-![](images/4.png)
+![](Images/4.png)
 
 `Admin Home page`
-![](images/5.png)
+![](Images/5.png)
 
 `Registration Page` 
-![](images/6.png)
+![](Images/6.png)
 
 `View Patients page`
-![](images/7.png)
+![](Images/7.png)
 
 `View Physicians page`
-![](images/8.png)
+![](Images/8.png)
 
 `View Supplier page`
-![](images/9.png)
+![](Images/9.png)
 
 `View Salesperson page`
-![](images/10.png)
+![](Images/10.png)
 
 `View Drug page`
-![](images/11.png)
+![](Images/11.png)
 
 `Edit personal details page`
-![](images/12.png)
+![](Images/12.png)
 
 `Request Doctor Appointment page for Patient`
-![](images/13.png)
+![](Images/13.png)
 
 `View Appointment page for Patient`
-![](images/14.png)
+![](Images/14.png)
 
 `Order drugs page for Patient `
-![](images/15.png)
+![](Images/15.png)
 
 `View Orders page for Patients`
-![](images/16.png)
+![](Images/16.png)
 
 `Physicians Home page`
-![](images/17.png)
+![](Images/17.png)
 
 `View Appointment page for Physicians`
-![](images/18.png)
+![](Images/18.png)
 
 `Edit Physicians Personal details`
-![](images/19.png)
+![](Images/19.png)
 
 `Supplier Home page`
-![](images/20.png)
+![](Images/20.png)
 
 `Suppliers orders page`
-![](images/21.png)
+![](Images/21.png)
 
 `Salesperson Home page`
-![](images/22.png)
+![](Images/22.png)
 
 `Salesperson Add  drugs page `
-![](images/23.png)
+![](Images/23.png)
 
 `Salesperson View drugs page`
-![](images/24.png)
+![](Images/24.png)
 
 `Salesperson View order page`
-![](images/25.png)
+![](Images/25.png)
 
 `Request Admin page`
-![](images/26.png)
+![](Images/26.png)
 
 ## How to run🔥
 1- Install the following:
