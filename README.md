@@ -1,6 +1,6 @@
 ![](https://play-lh.googleusercontent.com/U6ACZhNPI-uT-y8i3l5zNJ50Jr5cI4al4SLaQH1GtQOu8Kl4nH5NLe4MmJJjEvbOmG0)
 
-# Chikitsa🏆
+# Chikitsa - A Complete end to end Clinic Automation System🏆
 
 This is .NET based Web Application using ASP.NET (MVC) framework
 
