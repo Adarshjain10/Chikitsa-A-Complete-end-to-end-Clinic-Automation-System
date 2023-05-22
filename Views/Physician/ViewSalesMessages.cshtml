@@ -1,0 +1,67 @@
+﻿@model ClinicalAutomationSystem.Models.InboxDataModel
+
+@{
+    ViewBag.Title = "Physician | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:20%; height:auto; ">
+        @{ Html.RenderPartial("_MenuPhysician");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:80%; padding-left:40px; ">
+        <h2 class="col-md-offset-4"> View Messages </h2>
+        <hr />
+        @using (Html.BeginForm("ViewSalesMessages", "Physician"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed">
+                    <tr>
+                        <th class="text-center"> Salesperson Name </th>
+                        <th class="text-center"> Subject </th>
+                        <th class="text-center"> Details </th>
+                        <th class="text-center"> Date </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.ListData)
+                    {
+                        <tr>
+                            <td class="text-center"> @item.SalespersonName  </td>
+                            <td> @item.Subject  </td>
+                            <td> @item.MessageDetail  </td>
+                            <td class="text-center"> @item.MessageDate.ToString("dd/MM/yyyy")</td>
+                            <td>
+                                <a class="btn-link" href="@Url.Action("ViewAllSalesMessages", "Physician", new { id = item.MessageID})">View All Messages</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+

@@ -1,0 +1,74 @@
+﻿@model ClinicalAutomationSystem.Models.PatientDataModel
+
+@{
+    ViewBag.Title = "Admin | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:20%; height:auto; ">
+        @{ Html.RenderPartial("_MenuAdmin");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:80%; padding-left:40px; ">
+        <h2 class="col-md-offset-4"> View Patients </h2>
+        <hr />
+        @using (Html.BeginForm("ViewPatient", "Admin"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+                    <tr>
+                        <th class="text-center"> Patient Name </th>
+                        <th class="text-center"> Gender </th>
+                        <th class="text-center"> Date of Birth </th>
+                        <th class="text-center"> E-mail ID </th>
+                        <th class="text-center"> Contact Number </th>
+                        <th class="text-center"> Address </th>
+                        <th class="text-center"> Emergency Contact Name </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.ListPatient)
+                    {
+                        <tr>
+                            <td class="col-xs-2"> @item.FirstName &nbsp;  @item.LastName </td>
+                            <td> @item.Gender  </td>
+                            <td class="col-xs-2"> @item.DOB.ToString("dd/MM/yyyy") </td>
+                            <td> @item.EmailID </td>
+                            <td> @item.ContactNo </td>
+                            <td> @item.Address </td>
+                            <td class="col-xs-2"> @item.EmgContactName &emsp; @item.EmgContactNo </td>
+                            <td>
+                               <button class="btn btn-sm btn-danger" onclick="location.href = '@Url.Action("DeleteUser", "Admin", new { id = item.PatientID, str="Patient"})'; return false;">Block</button>
+                            </td>
+                            
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+

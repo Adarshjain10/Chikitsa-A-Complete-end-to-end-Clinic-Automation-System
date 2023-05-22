@@ -1,0 +1,35 @@
+﻿<div class="navbar navbar-inverse navbar-left navbar-form">
+    <div class="container-fluid">
+        @if (Request.IsAuthenticated && Session["Name"] == null)
+        {
+            <br />
+            @Html.ActionLink("Home", "Index", "Physician", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Fill Personal Details", "EditDetails", "Physician", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Change Password", "ChangePassword", "Physician", new { area = "" })
+            <br /> <br />
+        }
+        else if (Session["Name"] != null)
+        {
+            <br />
+            @Html.ActionLink("Home", "Index", "Physician", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Edit Personal Details", "EditDetails", "Physician", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Change Password", "ChangePassword", "Physician", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Appointments", "ViewAppointment", "Physician", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Patients' History", "History", "Physician", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Send Message", "SendMessages", "Physician", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Salespersons' Inbox", "ViewSalesMessages", "Physician", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Patients' Inbox", "ViewMessages", "Physician", new { area = "" })
+            <br /> <br />
+        }
+    </div>
+</div>
+

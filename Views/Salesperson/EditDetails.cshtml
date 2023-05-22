@@ -1,0 +1,89 @@
+﻿@model ClinicalAutomationSystem.Models.SalesDataModel
+
+@{
+    ViewBag.Title = "Salesperson | clini-C-are";
+}
+    <div class="container-fluid">
+        <br />
+        <div class="col-md-4" style="float:left; width:30%; height:auto; ">
+            @{ Html.RenderPartial("_MenuSalesperson");}
+        </div>
+        <div class="col-md-8" style="float:right; width:70%; padding-left:40px;">
+            <h2 class="col-md-offset-2">Edit Personal Details</h2>
+            <hr />
+            @using (Html.BeginForm("EditDetails", "Salesperson"))
+            {
+                <div class="form-horizontal">
+                    <br />
+                    <div class="form-group">
+                        <label class="control-label col-md-4"> First Name </label>
+                        <div class="col-md-3">
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4"> Last Name </label>
+                        <div class="col-md-3">
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4"> Current Status </label>
+                        <div class="col-md-3">
+                            @Html.TextBoxFor(m => m.CurrentStatus, new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ValidationMessageFor(m => m.CurrentStatus, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-md-10">
+                            @if (Session["Name"] == null)
+                            {
+                                <input type="submit" value="Insert" class="btn btn-primary" />
+                            }
+                            else
+                            {
+                                <input type="submit" value="Update" class="btn btn-success" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>

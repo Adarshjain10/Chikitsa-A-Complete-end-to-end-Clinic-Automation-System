@@ -1,0 +1,387 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40150394-2311-44DF-857E-388B21B15451}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClinicalAutomationSystem</RootNamespace>
+    <AssemblyName>ClinicalAutomationSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44352</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\WhatsApp Image 2020-05-15 at 3.56.47 PM.jpeg" />
+    <Content Include="Images\WhatsApp Image 2020-05-15 at 4.09.38 PM.jpeg" />
+    <Content Include="Models\CASModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CASModel.edmx</DependentUpon>
+      <LastGenOutput>CASModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CASModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CASModel.edmx</DependentUpon>
+      <LastGenOutput>CASModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\CASModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CASModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CASModel.edmx.diagram">
+      <DependentUpon>CASModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Shared\_IndexMenu.cshtml" />
+    <Content Include="Views\Shared\_MenuAdmin.cshtml" />
+    <Content Include="Views\Shared\_MenuPatient.cshtml" />
+    <Content Include="Views\Shared\_MenuPhysician.cshtml" />
+    <Content Include="Views\Shared\_MenuSupplier.cshtml" />
+    <Content Include="Views\Shared\_MenuSalesperson.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PatientController.cs" />
+    <Compile Include="Controllers\PhysicianController.cs" />
+    <Compile Include="Controllers\SalespersonController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Admin.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminDataModel.cs" />
+    <Compile Include="Models\Appointment.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppointmentDataModel.cs" />
+    <Compile Include="Models\CASModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CASModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CASModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CASModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CASModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataViewModel.cs" />
+    <Compile Include="Models\Drug.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DrugDataModel.cs" />
+    <Compile Include="Models\DrugDelivery.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Inbox.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InboxDataModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PasswordDataModel.cs" />
+    <Compile Include="Models\Patient.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PatientDataModel.cs" />
+    <Compile Include="Models\PatientOrderDetail.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PatientOrderModel.cs" />
+    <Compile Include="Models\Physician.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhysicianDataModel.cs" />
+    <Compile Include="Models\RequestAdmin.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RequestDataModel.cs" />
+    <Compile Include="Models\RoleDetail.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SalesDataModel.cs" />
+    <Compile Include="Models\SalesOrderModel.cs" />
+    <Compile Include="Models\Salesperson.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SalespersonOrderDetail.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SpecializationData.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Supplier.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SupplierDataModel.cs" />
+    <Compile Include="Models\User.cs">
+      <DependentUpon>CASModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Admin\EditDetails.cshtml" />
+    <Content Include="Views\Admin\ChangePassword.cshtml" />
+    <Content Include="Views\Admin\Register.cshtml" />
+    <Content Include="Views\Patient\Index.cshtml" />
+    <Content Include="Views\Patient\EditDetails.cshtml" />
+    <Content Include="Views\Physician\Index.cshtml" />
+    <Content Include="Views\Physician\EditDetails.cshtml" />
+    <Content Include="Views\Patient\ChangePassword.cshtml" />
+    <Content Include="Views\Physician\ChangePassword.cshtml" />
+    <Content Include="Views\Salesperson\Index.cshtml" />
+    <Content Include="Views\Salesperson\EditDetails.cshtml" />
+    <Content Include="Views\Salesperson\ChangePassword.cshtml" />
+    <Content Include="Views\Supplier\Index.cshtml" />
+    <Content Include="Views\Supplier\ChangePassword.cshtml" />
+    <Content Include="Views\Supplier\EditDetails.cshtml" />
+    <Content Include="Views\Home\RequestAdmin.cshtml" />
+    <Content Include="Views\Admin\ViewRequests.cshtml" />
+    <Content Include="Views\Admin\ViewPatient.cshtml" />
+    <Content Include="Views\Admin\ViewPhysician.cshtml" />
+    <Content Include="Views\Admin\ViewSalesperson.cshtml" />
+    <Content Include="Views\Admin\ViewSupplier.cshtml" />
+    <Content Include="Views\Salesperson\AddDrugs.cshtml" />
+    <Content Include="Views\Salesperson\ViewDrugs.cshtml" />
+    <Content Include="Views\Salesperson\EditDrugs.cshtml" />
+    <Content Include="Views\Home\Drugs.cshtml" />
+    <Content Include="Views\Admin\ViewDrugs.cshtml" />
+    <Content Include="Views\Patient\OrderDrugs.cshtml" />
+    <Content Include="Views\Patient\ViewOrders.cshtml" />
+    <Content Include="Views\Salesperson\ViewPatientOrders.cshtml" />
+    <Content Include="Views\Salesperson\PlaceOrders.cshtml" />
+    <Content Include="Views\Salesperson\ViewOrders.cshtml" />
+    <Content Include="Views\Supplier\ViewOrders.cshtml" />
+    <Content Include="Views\Patient\MakeAppointments.cshtml" />
+    <Content Include="Views\Patient\ViewAppointments.cshtml" />
+    <Content Include="Views\Physician\ViewAppointment.cshtml" />
+    <Content Include="Views\Physician\History.cshtml" />
+    <Content Include="Views\Physician\UpdateHistory.cshtml" />
+    <Content Include="Views\Patient\SendMessages.cshtml" />
+    <Content Include="Views\Patient\Inbox.cshtml" />
+    <Content Include="Views\Patient\ViewMessages.cshtml" />
+    <Content Include="Views\Patient\ViewAllMessages.cshtml" />
+    <Content Include="Views\Physician\ViewMessages.cshtml" />
+    <Content Include="Views\Physician\ViewAllMessages.cshtml" />
+    <Content Include="Views\Physician\SendMessages.cshtml" />
+    <Content Include="Views\Physician\ViewSalesMessages.cshtml" />
+    <Content Include="Views\Physician\ViewAllSalesMessages.cshtml" />
+    <Content Include="Views\Salesperson\ViewMessages.cshtml" />
+    <Content Include="Views\Salesperson\ViewAllMessages.cshtml" />
+    <Content Include="Views\Home\Physician.cshtml" />
+    <Content Include="Views\Salesperson\GetOrders.cshtml" />
+    <Content Include="Views\Salesperson\SendMessages.cshtml" />
+    <Content Include="Views\Salesperson\ViewSupplierMessages.cshtml" />
+    <Content Include="Views\Salesperson\ViewAllSupplierMessages.cshtml" />
+    <Content Include="Views\Supplier\ViewMessages.cshtml" />
+    <Content Include="Views\Supplier\ViewAllMessages.cshtml" />
+    <Content Include="Views\Salesperson\Inbox.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53391</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44352/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

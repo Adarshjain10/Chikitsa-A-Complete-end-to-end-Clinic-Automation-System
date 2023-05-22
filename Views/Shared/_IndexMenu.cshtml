@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-home" })
+                @Html.ActionLink("About Us", "AboutUs", "Home", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-globe" })
+                @Html.ActionLink("Contact Us", "ContactUs", "Home", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-phone" })
+                @if (Request.IsAuthenticated && Session["EmailID"] != null)
+                {
+                    switch (Session["RoleName"])
+                    {
+                        case "Admin":
+                            @Html.ActionLink("Dashboard", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-circle-arrow-left" })
+                            break;
+                        case "Physician":
+                            @Html.ActionLink("Dashboard", "Index", "Physician", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-circle-arrow-left" })
+                            break;
+                        case "Patient":
+                            @Html.ActionLink("Dashboard", "Index", "Patient", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-circle-arrow-left" })
+                            break;
+                        case "Supplier":
+                            @Html.ActionLink("Dashboard", "Index", "Supplier", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-circle-arrow-left" })
+                            break;
+                        case "Salesperson":
+                            @Html.ActionLink("Dashboard", "Index", "Salesperson", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-circle-arrow-left" })
+                            break;
+                    }
+                    @Html.ActionLink("Log Out", "Logout", "Home", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-log-out" })
+                }
+                else
+                {
+                    @Html.ActionLink("Drugs Inventory", "Drugs", "Home", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-plus-sign" })
+                    @Html.ActionLink("Our Physicians", "Physician", "Home", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-star" })
+                    @Html.ActionLink("Request Admin", "RequestAdmin", "Home", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-registration-mark" })
+                    @Html.ActionLink("Log In", "Login", "Home", new { area = "" }, new { @class = "navbar-brand navbar-right glyphicon glyphicon-log-in" })
+                }
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

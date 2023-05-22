@@ -1,0 +1,65 @@
+﻿@model ClinicalAutomationSystem.Models.AppointmentDataModel
+
+@{
+    ViewBag.Title = "Patient | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuPatient");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:70%; padding-left:20px; ">
+        <h2 class="col-md-offset-5"> View Appointments </h2>
+        <hr />
+        @using (Html.BeginForm("ViewAppointments", "Patient"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+                    <tr>
+                        <th class="text-center"> Physician Name </th>
+                        <th class="text-center"> Subject </th>
+                        <th class="text-center"> Description </th>
+                        <th class="text-center"> Appointment Date </th>
+                        <th class="text-center"> Appointment Status </th>
+                    </tr>
+                    @foreach (var item in Model.ListData)
+                    {
+                        <tr>
+                            <td> @item.PhysicianName </td>
+                            <td> @item.Subject </td>
+                            <td> @item.Description </td>
+                            <td> @item.AppointmentDate  </td>
+                            <td> @item.AppointmentStatus  </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+

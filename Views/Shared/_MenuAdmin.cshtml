@@ -1,0 +1,38 @@
+﻿<div class="navbar navbar-inverse navbar-left navbar-form">
+    <div class="container-fluid">
+        @if (Request.IsAuthenticated && Session["Name"] == null)
+        {
+            <br />
+            @Html.ActionLink("Home", "Index", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Fill Personal Details", "EditDetails", "Admin", new { area = "" })
+            <br /> <br />
+        }
+        else if (Session["Name"] != null)
+        {
+            <br />
+            @Html.ActionLink("Home", "Index", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Edit Personal Details", "EditDetails", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Change Password", "ChangePassword", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Register Users", "Register", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Requests", "ViewRequests", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Patients", "ViewPatient", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Physicians", "ViewPhysician", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Suppliers", "ViewSupplier", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Salespersons", "ViewSalesperson", "Admin", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Drugs", "ViewDrugs", "Admin", new { area = "" })
+            <br /> <br />
+        }
+    </div>
+</div>
+
+

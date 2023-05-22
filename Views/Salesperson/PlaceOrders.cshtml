@@ -1,0 +1,66 @@
+﻿@model ClinicalAutomationSystem.Models.SupplierDataModel
+
+@{
+    ViewBag.Title = "Salesperson | clini-C-are";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:20%; height:auto; ">
+        @{ Html.RenderPartial("_MenuSalesperson");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:80%; padding-left:40px; ">
+        <h2 class="col-md-offset-5"> Place Orders </h2>
+        <hr />
+        @using (Html.BeginForm("PlaceOrders", "Salesperson"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+                    <tr>
+                        <th class="text-center"> Supplier Name </th>
+                        <th class="text-center"> Company Name </th>
+                        <th class="text-center"> Company Address </th>
+                        <th class="text-center"> Order </th>
+                    </tr>
+                    @foreach (var item in Model.ListSupplier)
+                    {
+                        <tr>
+                            <td> @item.FirstName &nbsp; @item.LastName </td>
+                            <td> @item.CompanyName  </td>
+                            <td> @item.CompanyAddress </td>
+                            <td>
+                                <button class="btn btn-success" onclick="location.href = '@Url.Action("GetOrders", "Salesperson", new { id = item.SupplierID})'; return false;">Order Drugs</button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+                <br /> <br />
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+

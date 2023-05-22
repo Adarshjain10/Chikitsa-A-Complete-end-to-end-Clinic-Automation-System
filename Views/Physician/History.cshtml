@@ -1,0 +1,67 @@
+﻿@model ClinicalAutomationSystem.Models.PatientDataModel
+
+@{
+    ViewBag.Title = "Physician | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuPhysician");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:70%; padding-left:20px; ">
+        <h2 class="col-md-offset-4"> Update Patient's History </h2>
+        <hr />
+        @using (Html.BeginForm("History", "Physician"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+                    <tr>
+                        <th class="text-center"> Patient Name </th>
+                        <th class="text-center"> Gender </th>
+                        <th class="text-center"> Age </th>
+                        <th class="text-center"> History </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.ListPatient)
+                    {
+                        <tr>
+                            <td> @item.FirstName &nbsp; @item.LastName  </td>
+                            <td> @item.Gender  </td>
+                            <td> @item.Age  </td>
+                            <td class="col-md-6"> @item.History  </td>
+                            <td>
+                                <button class="btn btn-sm btn-success" onclick="location.href = '@Url.Action("UpdateHistory", "Physician", new { id = item.PatientID})'; return false;">Update</button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+

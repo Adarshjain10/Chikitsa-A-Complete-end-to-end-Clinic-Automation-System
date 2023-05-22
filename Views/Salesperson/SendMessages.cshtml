@@ -1,0 +1,71 @@
+﻿@model ClinicalAutomationSystem.Models.SalesOrderModel
+
+@{
+    ViewBag.Title = "Salesperson | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuSalesperson");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:70%; padding-left:40px; ">
+        <h2 class="col-md-offset-5"> Send Messages </h2>
+        <hr />
+        @using (Html.BeginForm("SendMessages", "Salesperson"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+                    <tr>
+                        <th class="text-center"> Order Number </th>
+                        <th class="text-center"> Supplier Name </th>
+                        <th class="text-center"> Drug Name </th>
+                        <th class="text-center"> Quantity </th>
+                        <th class="text-center"> Order Date </th>
+                        <th class="text-center"> Order Status </th>
+                        <th> </th>
+                    </tr>
+                    @foreach (var item in Model.ListOrder)
+                    {
+                        <tr>
+                            <td> @item.OrderNumber </td>
+                            <td> @item.SupplierName  </td>
+                            <td> @item.DrugName </td>
+                            <td> @item.Quantity </td>
+                            <td> @item.OrderDate.ToString("dd/MM/yyyy") </td>
+                            <td> @item.OrderStatus </td>
+                            <td>
+                                <a class="btn-link" href="@Url.Action("Inbox", "Salesperson", new { id = item.SalespersonOrderID})">Send Message</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+

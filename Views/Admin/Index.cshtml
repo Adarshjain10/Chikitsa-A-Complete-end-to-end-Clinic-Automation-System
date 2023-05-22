@@ -1,0 +1,44 @@
+﻿@model ClinicalAutomationSystem.Models.AdminDataModel
+@{
+    ViewBag.Title = "Home - Admin | clini-C-are";
+}
+<head>
+    <script type="text/javascript">
+        function DisableBackButton() {
+            window.history.forward();
+        }
+        setTimeout("DisableBackButton", 0);
+        window.onunload = function () { null };
+    </script>
+</head>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<div class="container-fluid body-content">
+    <br />
+    <div class="container-fluid">
+        <div class="col-md-4" style="float:left; width:30%; height:auto; ">
+            @{ Html.RenderPartial("_MenuAdmin");}
+        </div>
+        <div class="col-md-8" style="float:right; width:70%; padding-left:40px;">
+            <h2 class="text-center"> Home : Admin </h2>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+
+@section Script
+{
+    <script type="text/javascript">
+        function DisableBackButtonAllBrowsers() {
+            window.history.forward(0)
+        };
+        DisableBackButtonAllBrowsers();
+        window.onload = DisableBackButtonAllBrowsers();
+        window.onpageshow = function (evts) { if (evts.persisted) DisableBackButtonAllBrowsers(); };
+        window.onunload = function () { void (0) };
+    </script>
+}

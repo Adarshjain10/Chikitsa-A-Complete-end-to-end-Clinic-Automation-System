@@ -1,0 +1,61 @@
+﻿@model ClinicalAutomationSystem.Models.PhysicianDataModel
+
+@{
+    ViewBag.Title = "Our Physicians | clini-C-are";
+}
+<br />
+<br />
+<h2 class="col-md-offset-5">Our Physicians</h2>
+<hr />
+@using (Html.BeginForm("Physician", "Home"))
+{
+    <div>
+        <br />
+        <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+            <tr>
+                <th class="text-center"> Specialization </th>
+                <th class="text-center"> Physician Name </th>
+                <th class="text-center"> Total Experience </th>
+                <th class="text-center"> Gender </th>
+                <th class="text-center"> Education </th>
+                <th class="text-center"> Current Status </th>
+                <th class="text-center"> Appointment </th>
+            </tr>
+            @foreach (var item in Model.ListPhysician)
+            {
+                <tr>
+                    <td class="col-xs-2"> @item.SpecializationName  </td>
+                    <td class="col-xs-3"> Dr. &nbsp; @item.FirstName &nbsp; @item.LastName  </td>
+                    <td class="col-xs-2"> @item.TotalExperience  &nbsp; years</td>
+                    <td > @item.Gender </td>
+                    <td class="col-xs-3"> @item.Education  </td>
+                    <td class="col-xs-2"> @item.CurrentStatus </td>
+                    <td>
+                        <button class="btn btn-success" onclick="location.href = '@Url.Action("Login", "Home")'; return false;">Request Appointment</button>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,111 @@
+﻿@model ClinicalAutomationSystem.Models.AppointmentDataModel
+
+@{
+    ViewBag.Title = "Patient | clini-C-are";
+}
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<div class="container-fluid">
+    <br />
+    <div class="col-md-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuPatient");}
+    </div>
+    <div class="col-md-8" style="float:right; width:70%; padding-left:40px;">
+        <h2 class="col-md-offset-2">Request Doctor Appointment</h2>
+        <hr />
+        @using (Html.BeginForm("MakeAppointments", "Patient"))
+        {
+            <div class="form-horizontal">
+                <br />
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Specialization </label>
+                    <div class="col-md-4">
+                        @Html.DropDownListFor(m => m.SpecializationID, Model.ListSpecialization, "Select Specialization", new { @id="ddlS", @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.SpecializationID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Physician </label>
+                    <div class="col-md-4">
+                        @Html.DropDownListFor(m => m.PhysicianID, Model.ListPhysician, "Select Physician", new {@id="ddlP", @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.PhysicianID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Appointment Date </label>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(m => m.AppointmentDate, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.AppointmentDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Subject </label>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Description </label>
+                    <div class="col-md-4">
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <input type="submit" value="Request Appointment" class="btn btn-success" />
+                    </div>
+                </div>
+                <br /> <br />
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <label class="text-success"> @ViewBag.text</label>
+                    </div>
+                </div>
+            </div>
+        }
+        <br />
+        <br />
+    </div>
+</div>
+
+@section Script
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ddlS").change(function () {
+                $("#ddlP").empty();
+                    $.ajax({
+                        url: "@Url.Action("GetPhysicians","Patient")",
+                        type: "GET",
+                        data: { id: parseInt($("#ddlS").val()) },
+                        dataType: "json",
+                        success: function (data) {
+                            if (data != null) {
+                                $("#ddlP").append($("<option></option>").val("").text("Select Physician"));
+                                $(data).each(function (i, item) {
+                                    $("#ddlP").append("<option value = " + item.Value + ">" + item.Text + "</option>");
+                                });
+                            }
+                        },
+                        error: function () {
+                            alert("Error!");
+                        }
+                    });
+            });
+        });
+    </script>
+
+}

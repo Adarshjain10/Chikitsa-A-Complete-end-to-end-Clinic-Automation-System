@@ -1,0 +1,42 @@
+﻿<div class="navbar navbar-inverse navbar-left navbar-form">
+    <div class="container-fluid">
+        @if (Request.IsAuthenticated && Session["Name"] == null)
+        {
+            <br />
+            @Html.ActionLink("Home", "Index", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Fill Personal Details", "EditDetails", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Change Password", "ChangePassword", "Salesperson", new { area = "" })
+            <br /> <br />
+        }
+        else if (Session["Name"] != null)
+        {
+            <br />
+            @Html.ActionLink("Home", "Index", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Edit Personal Details", "EditDetails", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Change Password", "ChangePassword", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Add Drugs", "AddDrugs", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Drugs", "ViewDrugs", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Raised Orders", "ViewPatientOrders", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Place Orders", "PlaceOrders", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Placed Orders", "ViewOrders", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Send Message", "SendMessages", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Suppliers' Inbox", "ViewSupplierMessages", "Salesperson", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Physicians' Inbox", "ViewMessages", "Salesperson", new { area = "" })
+            <br /> <br />
+        }
+    </div>
+</div>
+
+

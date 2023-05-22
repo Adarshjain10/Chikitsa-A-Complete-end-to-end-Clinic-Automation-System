@@ -1,0 +1,106 @@
+﻿@model ClinicalAutomationSystem.Models.PhysicianDataModel
+
+@{
+    ViewBag.Title = "Physician | clini-C-are";
+}
+<div class="container-fluid">
+    <br />
+    <div class="col-md-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuPhysician");}
+    </div>
+    <div class="col-md-8" style="float:right; width:70%; padding-left:40px;">
+        <h2 class="col-md-offset-2">Edit Personal Details</h2>
+        <hr />
+        @using (Html.BeginForm("EditDetails", "Physician"))
+        {
+            <div class="form-horizontal">
+                <br />
+                <div class="form-group">
+                    <label class="control-label col-md-4"> First Name </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Last Name </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>               
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Gender </label>
+                    <div class="col-md-7">
+                        Male &ensp;    @Html.RadioButtonFor(m => m.Gender, "Male")
+                        &emsp;
+                        Female &ensp;    @Html.RadioButtonFor(m => m.Gender, "Female")
+                        @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Total Experience </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.TotalExperience, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.TotalExperience, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Education Details </label>
+                    <div class="col-md-3">
+                        @Html.TextAreaFor(m => m.Education, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.Education, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Current Status </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.CurrentStatus, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.CurrentStatus, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Specialization </label>
+                    <div class="col-md-3">
+                        @Html.DropDownListFor(m => m.SpecializationID, Model.ListSpecialization, "Select Specialization", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.SpecializationID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        @if (Session["Name"] == null)
+                        {
+                            <input type="submit" value="Insert" class="btn btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Update" class="btn btn-success" />
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>

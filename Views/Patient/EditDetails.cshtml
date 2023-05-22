@@ -1,0 +1,99 @@
+﻿@model ClinicalAutomationSystem.Models.PatientDataModel
+
+@{
+    ViewBag.Title = "Patient | clini-C-are";
+}
+<div class="container-fluid">
+    <br />
+    <div class="col-md-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuPatient");}
+    </div>
+    <div class="col-md-8" style="float:right; width:70%; padding-left:40px;">
+        <h2 class="col-md-offset-2">Edit Personal Details</h2>
+        <hr />
+        @using (Html.BeginForm("EditDetails", "Patient"))
+        {
+            <div class="form-horizontal">
+                <br />
+                <div class="form-group">
+                    <label class="control-label col-md-4"> First Name </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class="text-danger"})
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Last Name </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Date of Birth </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.DOB, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.DOB, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Gender </label>
+                    <div class="col-md-7">
+                        Male &ensp;    @Html.RadioButtonFor(m => m.Gender, "Male")
+                        &emsp;
+                        Female &ensp;    @Html.RadioButtonFor(m => m.Gender, "Female")
+                        @Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Contact Number </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.ContactNo, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.ContactNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Address </label>
+                    <div class="col-md-3">
+                        @Html.TextAreaFor(m => m.Address, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Emergency Contact Name </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.EmgContactName, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Emergency Contact Number </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.EmgContactNo, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        @if (Session["Name"] == null)
+                        {
+                            <input type="submit" value="Insert" class="btn btn-primary" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Update" class="btn btn-success" />
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

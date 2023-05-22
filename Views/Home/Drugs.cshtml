@@ -1,0 +1,71 @@
+﻿@model ClinicalAutomationSystem.Models.DrugDataModel
+
+@{
+    ViewBag.Title = "Drugs Inventory | clini-C-are";
+}
+<br />
+<br />
+<h2 class="col-md-offset-5">Drugs Inventory</h2>
+<hr />
+@using (Html.BeginForm("Drugs", "Home"))
+{
+    <div>
+        <br />
+        <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+            <tr>
+                <th class="text-center"> Drug Name </th>
+                <th class="text-center"> Manufacturer Name </th>
+                <th class="text-center"> Substitutions </th>
+                <th class="text-center"> Uses </th>
+                <th class="text-center"> Side Effects </th>
+                <th class="text-center"> Not Recommended </th>
+                <th class="text-center"> Manufacturing Date </th>
+                <th class="text-center"> Expiry Date </th>
+                <th class="text-center"> Price </th>
+                <th class="text-center"> Discount Amount </th>
+                <th class="text-center"> Quantity Available </th>
+                <th class="text-center"> Order </th>
+            </tr>
+            @foreach (var item in Model.ListDrugs)
+            {
+                <tr>
+                    <td class="col-xs-2"> @item.DrugName  </td>
+                    <td class="col-xs-2"> @item.Manufacturer  </td>
+                    <td class="col-xs-2"> @item.Substitutions  </td>
+                    <td> @item.Uses  </td>
+                    <td class="col-xs-2"> @item.SideEffects </td>
+                    <td class="col-xs-2"> @item.NotRecommended  </td>
+                    <td> @item.MfgDate.ToString("dd/MM/yyyy") </td>
+                    <td class="col-xs-2"> @item.ExpDate.ToString("dd/MM/yyyy") </td>
+                    <td> @item.Price  </td>
+                    <td> @item.DiscountAmount  </td>
+                    <td> @item.QOH  &nbsp; @item.QOHType  </td>
+                    <td>
+                        <button class="btn btn-success" onclick="location.href = '@Url.Action("Login", "Home")'; return false;">Order</button>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

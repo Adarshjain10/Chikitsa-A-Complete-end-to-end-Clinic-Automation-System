@@ -1,0 +1,59 @@
+﻿@model ClinicalAutomationSystem.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Log In | clini-C-are";
+}
+<br /> <br />
+       <h2 class="col-md-offset-5">&nbsp; &nbsp; &nbsp;Log In</h2>
+
+@using (Html.BeginForm("Login", "Home"))
+{
+    <br /> 
+    <div class="form-horizontal col-md-offset-4">
+        <br />
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+            </div>
+            <div class="col-md-5">
+                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label col-md-2" })
+            <div class="col-md-3">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
+            <div class="col-md-5">
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-10">
+                <input type="submit" value="Log In" class="btn btn-success" />
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2">
+                <a href='@Url.Action("RequestAdmin","Home")'>Not a User? Sign In</a>
+            </div>
+        </div>
+        <br /> <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <label class="text-danger"> @ViewBag.text</label>
+            </div>
+        </div>
+    </div>
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

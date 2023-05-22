@@ -1,0 +1,75 @@
+﻿@model ClinicalAutomationSystem.Models.DrugDataModel
+
+@{
+    ViewBag.Title = "Admin | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:20%; height:auto; ">
+        @{ Html.RenderPartial("_MenuAdmin");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:80%; padding-left:20px; ">
+        <h2 class="col-md-offset-5"> View Drugs </h2>
+        <hr />
+        @using (Html.BeginForm("ViewDrugs", "Admin"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+                    <tr>
+                        <th class="text-center"> Drug Name </th>
+                        <th class="text-center"> Manufacturer Name </th>
+                        <th class="text-center"> Manufacturing Date </th>
+                        <th class="text-center"> Expiry Date </th>
+                        <th class="text-center"> Price </th>
+                        <th class="text-center"> Discount Amount </th>
+                        <th class="text-center"> Quantity Available </th>
+                        <th class="text-center"> Is Deleted </th>
+                        <th class="text-center"> Delete </th>
+                    </tr>
+                    @foreach (var item in Model.ListDrugs)
+                    {
+                        <tr>
+                            <td class="col-xs-3"> @item.DrugName  </td>
+                            <td> @item.Manufacturer  </td>
+                            <td> @item.MfgDate.ToString("dd/MM/yyyy") </td>
+                            <td class="col-xs-2"> @item.ExpDate.ToString("dd/MM/yyyy") </td>
+                            <td> @item.Price  </td>
+                            <td> @item.DiscountAmount  </td>
+                            <td> @item.QOH  &nbsp; @item.QOHType  </td>
+                            <td> @item.IsDeleted </td>
+                            <td class="col-xs-2">
+                                <button class="btn btn-danger" onclick="location.href = '@Url.Action("DeleteDrugs", "Admin", new { id = item.DrugID })'; return false;">Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f3694392c4b4d0c8829e498d56f1e9d" Name="Diagram1">
+        <EntityTypeShape EntityType="CASDatabaseModel1.Admin" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.Appointment" Width="1.5" PointX="7.5" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.Drug" Width="1.5" PointX="5.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.DrugDelivery" Width="1.5" PointX="9.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.Inbox" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.Patient" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.PatientOrderDetail" Width="1.5" PointX="7.5" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.Physician" Width="1.5" PointX="10.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.RequestAdmin" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.RoleDetail" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.Salesperson" Width="1.5" PointX="5.25" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.SalespersonOrderDetail" Width="1.5" PointX="7.5" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.SpecializationData" Width="1.5" PointX="8" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.Supplier" Width="1.5" PointX="5.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="CASDatabaseModel1.User" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_Admin_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_Appointment_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_Appointment_Physician" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_PatientOrderDetails_Drug" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_DrugDelivery_DrugDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_DrugDelivery_SalespersonOrderDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_Patient_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_PatientOrderDetails_Patient" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_PatientOrderDetails_Salesperson" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_Physician_Physician" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_Physician_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_RequestAdmin_RoleDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_User_RoleDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_Salesperson_User" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_SalespersonOrderDetails_Salesperson" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_SalespersonOrderDetails_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="CASDatabaseModel1.FK_Supplier_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

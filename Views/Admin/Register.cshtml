@@ -1,0 +1,72 @@
+﻿@model ClinicalAutomationSystem.Models.DataViewModel
+
+@{
+    ViewBag.Title = "Registration - Admin | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-md-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuAdmin");}
+    </div>
+    <div class="col-md-8" style="float:right; width:70%; padding-left:40px;">
+        <h2 class="col-md-offset-2"> Registration </h2>
+        <hr />
+        @using (Html.BeginForm("Register", "Admin"))
+        {
+            <div class="form-horizontal">
+                <br /> <br />
+                <div class="form-group">
+                    <label class="control-label col-md-4"> UserName </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> E-mail ID </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.EmailID, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.EmailID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4">Role</label>
+                    <div class="col-md-3">
+                        @Html.DropDownListFor(m => m.RoleID, Model.ListRole, "Select Role", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.RoleID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <input type="submit" value="Submit" class="btn btn-primary" />
+                    </div>
+                </div>
+                <br /> <br />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <label class="text-primary"> @ViewBag.text</label>
+                    </div> 
+                </div>
+                            
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>

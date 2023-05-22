@@ -1,0 +1,75 @@
+﻿@model ClinicalAutomationSystem.Models.RequestDataModel
+
+@{
+    ViewBag.Title = "Admin | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:20%; height:auto; ">
+        @{ Html.RenderPartial("_MenuAdmin");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:80%; padding-left:40px; ">
+        <h2 class="col-md-offset-4"> View Requests </h2>
+        @using (Html.BeginForm("ViewRequests", "Admin"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+                    <tr>
+                        <th class="text-center"> First Name </th>
+                        <th class="text-center"> Last Name </th>
+                        <th class="text-center"> E-mail ID </th>
+                        <th class="text-center"> Role </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.ListRequest)
+                    {
+                        <tr>
+                            <td> @item.FirstName  </td>
+                            <td> @item.LastName  </td>
+                            <td> @item.EmailID  </td>
+                            <td> @item.RoleName  </td>
+                            @if (item.Status == "Requested")
+                            {
+                                <td>
+                                    <button class="btn btn-sm btn-default" onclick="location.href = '@Url.Action("OnRequest", "Admin", new { id = item.RequestID, str="Accepted"})'; return false;">Accept</button>
+                                    &nbsp; &nbsp;
+                                    <button class="btn btn-sm btn-default" onclick="location.href = '@Url.Action("OnRequest", "Admin", new { id = item.RequestID, str="Declined"})'; return false;">Decline</button>
+                                </td>
+                            }
+                            else
+                            {
+                                <td> @item.Status  </td>
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+

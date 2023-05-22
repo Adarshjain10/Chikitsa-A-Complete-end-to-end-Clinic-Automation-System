@@ -1,0 +1,77 @@
+﻿@model ClinicalAutomationSystem.Models.PatientOrderModel
+@{
+    ViewBag.Title = "Salesperson | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:20%; height:auto; ">
+        @{ Html.RenderPartial("_MenuSalesperson");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:80%; padding-left:40px; ">
+        <h2 class="col-md-offset-5"> View Orders </h2>
+        <hr />
+        @using (Html.BeginForm("ViewPatientOrders", "Salesperson"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+                    <tr>
+                        <th class="text-center"> Order Number </th>
+                        <th class="text-center"> Order Date </th>
+                        <th class="text-center"> Drug Name </th>
+                        <th class="text-center"> Patient Name </th>
+                        <th class="text-center"> Order Quantity </th>
+                        <th class="text-center"> Order Status </th>
+                    </tr>
+                    @foreach (var item in Model.ListOrder)
+                    {
+                        <tr>
+                            <td> @item.OrderNumber </td>
+                            <td> @item.OrderDate.ToString("dd/MM/yyyy") </td>
+                            <td> @item.DrugName  </td>
+                            <td> @item.PatientName </td>
+                            <td> @item.Quantity  </td>
+                            @if (item.OrderStatus == "Requested")
+                            {
+                                <td>
+                                    <button class="btn btn-sm btn-success" onclick="location.href = '@Url.Action("UpdateOrder", "Salesperson", new { id = item.PatientOrderID, str="Deliver"})'; return false;">Deliver</button>
+                                    &nbsp; &nbsp;
+                                    <button class="btn btn-sm btn-danger" onclick="location.href = '@Url.Action("UpdateOrder", "Salesperson", new { id = item.PatientOrderID, str="Reject"})'; return false;">Reject</button>
+                                </td>
+                            }
+                            else
+                            {
+                                <td>@item.OrderStatus</td>
+                            }
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+

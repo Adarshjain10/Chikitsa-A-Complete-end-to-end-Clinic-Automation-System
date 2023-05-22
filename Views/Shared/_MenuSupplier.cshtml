@@ -1,0 +1,30 @@
+﻿<div class="navbar navbar-inverse navbar-left navbar-form">
+    <div class="container-fluid">
+        @if (Request.IsAuthenticated && Session["Name"] == null)
+        {
+            <br />
+            @Html.ActionLink("Home", "Index", "Supplier", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Fill Personal Details", "EditDetails", "Supplier", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Change Password", "ChangePassword", "Supplier", new { area = "" })
+            <br /> <br />
+        }
+        else if (Session["Name"] != null)
+        {
+            <br />
+            @Html.ActionLink("Home", "Index", "Supplier", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Edit Personal Details", "EditDetails", "Supplier", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("Change Password", "ChangePassword", "Supplier", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Raised Orders", "ViewOrders", "Supplier", new { area = "" })
+            <br /> <br />
+            @Html.ActionLink("View Inbox", "ViewMessages", "Supplier", new { area = "" })
+            <br /> <br />
+        }
+    </div>
+</div>
+
+

@@ -1,0 +1,68 @@
+﻿@model ClinicalAutomationSystem.Models.PatientOrderModel
+
+@{
+    ViewBag.Title = "Patient | clini-C-are";
+}
+
+<br />
+<div class="container-fluid">
+    <div class="col-md-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuPatient");}
+    </div>
+    <div class="col-md-8" style="float:right; width:70%; padding-left:40px;">
+        <h2 class="col-md-offset-4">Order Drugs</h2>
+        <hr />
+        @using (Html.BeginForm("OrderDrugs", "Patient"))
+        {
+            <div class="form-horizontal">
+                <br />
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Drug </label>
+                    <div class="col-md-3">
+                        @Html.DropDownListFor(m => m.DrugID, Model.ListDrug, "Select Drug", new { onchange = "document.forms[0].submit();", @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.DrugID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Total Quantity Available </label>
+                    <div class="col-md-3">
+                        @Html.HiddenFor(m => m.QuantityAvailable)
+                        @Html.DisplayFor(m => m.QuantityAvailable, new { @class = "form-control" })
+                        @Html.DisplayFor(m => m.QuantityType, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Order Quantity </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.Quantity, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <input type="submit" value="Order Drug" class="btn btn-primary" />
+                    </div>
+                </div>
+                <br /> <br />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <label class="text-success"> @ViewBag.text</label>
+                    </div>
+                </div>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>

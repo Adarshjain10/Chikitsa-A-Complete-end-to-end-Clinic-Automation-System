@@ -1,0 +1,59 @@
+﻿@model ClinicalAutomationSystem.Models.InboxDataModel
+
+@{
+    ViewBag.Title = "Physician | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuPhysician");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:70%; padding-left:30px; ">
+        <h2 class="col-md-offset-4"> View All Messages </h2>
+        <hr />
+        @using (Html.BeginForm("ViewAllMessages", "Physician"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed table-striped">
+                    <tr>
+                        <th class="text-center"> Message From </th>
+                        <th class="text-center"> Messages </th>
+                        <th class="text-center"> Date </th>
+                    </tr>
+                    @foreach (var item in Model.ListData)
+                    {
+                        <tr>
+                            <td> @item.FromEmailID  </td>
+                            <td> @item.MessageDetail  </td>
+                            <td class="text-center"> @item.MessageDate.ToString("dd/MM/yyyy") </td>
+                        </tr>
+                    }
+                </table>
+                <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-lg-12">
+                            @Html.TextAreaFor(m => m.MessageDetail, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-offset-6 col-md-10">
+                            <input type="submit" value="Send" class="btn btn-success" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <label class="text-success"> @ViewBag.text</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

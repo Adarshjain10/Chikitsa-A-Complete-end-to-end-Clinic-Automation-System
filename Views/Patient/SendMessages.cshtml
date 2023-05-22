@@ -1,0 +1,63 @@
+﻿@model ClinicalAutomationSystem.Models.AppointmentDataModel
+
+@{
+    ViewBag.Title = "Patient | clini-C-are";
+}
+
+<div class="container-fluid">
+    <br />
+    <div class="col-lg-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuPatient");}
+    </div>
+    <div class="col-lg-12" style="float:right; width:70%; padding-left:40px; ">
+        <h2 class="col-md-offset-5"> Send Messages </h2>
+        <hr />
+        @using (Html.BeginForm("SendMessages", "Patient"))
+        {
+            <div>
+                <br />
+                <table border="1" class="table col-lg-12 table-bordered table-condensed text-center">
+                    <tr>
+                        <th class="text-center"> Physician Name </th>
+                        <th class="text-center"> Appointment Date </th>
+                        <th> </th>
+                    </tr>
+                    @foreach (var item in Model.ListData)
+                    {
+                        <tr>
+                            <td> @item.PhysicianName  </td>
+                            <td> @item.AppointmentDate  </td>
+                            <td>
+                                <a class="btn-link" href="@Url.Action("Inbox", "Patient", new { id = item.AppointmentID})">Send Message</a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+

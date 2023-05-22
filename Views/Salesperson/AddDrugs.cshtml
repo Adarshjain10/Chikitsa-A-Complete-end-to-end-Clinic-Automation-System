@@ -1,0 +1,159 @@
+﻿@model ClinicalAutomationSystem.Models.DrugDataModel
+
+@{
+    ViewBag.Title = "Salesperson | clini-C-are";
+}
+<div class="container-fluid">
+    <br />
+    <div class="col-md-4" style="float:left; width:30%; height:auto; ">
+        @{ Html.RenderPartial("_MenuSalesperson");}
+    </div>
+    <div class="col-md-8" style="float:right; width:70%; padding-left:40px;">
+        <h2 class="col-md-offset-2">Add Drugs</h2>
+        <hr />
+        @using (Html.BeginForm("AddDrugs", "Salesperson"))
+        {
+            <div class="form-horizontal">
+                <br />
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Drug Name </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.DrugName, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.DrugName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Manufacturer Name </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.Manufacturer, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.Manufacturer, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Substitutions </label>
+                    <div class="col-md-3">
+                        @Html.TextAreaFor(m => m.Substitutions, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.Substitutions, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Uses </label>
+                    <div class="col-md-3">
+                        @Html.TextAreaFor(m => m.Uses, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.Uses, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Side Effects </label>
+                    <div class="col-md-3">
+                        @Html.TextAreaFor(m => m.SideEffects, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.SideEffects, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Not Recommended To </label>
+                    <div class="col-md-3">
+                        @Html.TextAreaFor(m => m.NotRecommended, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.NotRecommended, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Manufacturing Date </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.MfgDate, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.MfgDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Expiry Date </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.ExpDate, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.ExpDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Quantity On Hand </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.QOH, new { @class = "form-control" })
+                        @Html.TextBoxFor(m => m.QOHType, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.QOH, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(m => m.QOHType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Price </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"> Discounted Amount (If Any) </label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.DiscountAmount, new { @class = "form-control" })
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <input type="submit" value="Add Drug" class="btn btn-primary" />
+                    </div>
+                </div>
+                <br /> <br />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <label class="text-primary"> @ViewBag.Text</label>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
